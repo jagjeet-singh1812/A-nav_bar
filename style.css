@@ -1,120 +1,175 @@
-body{
-    margin: 0;
-    font-family: Circular,spotify-circular,Helvetica,Arial,sans-serif;
-    color: white;
-}
-
-* .topnav{
-        overflow: hidden;
-        background-color: black;
-        height: 60px;
-        /* width: 1440px; */
-}
-
-.topnav a{
-    float: right;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-weight:bold;
-    padding: 19px 40px;
-    font-size: 1.3rem;
-}
-
-.topnav img{
-    height: 50px;
-    width: 130px;
-    padding: 5px 90px;
-}
-
-.box{
-    background-color: rgba(12, 12, 12, 0.958);
-    width: 100vw;
-    height: 470px;
-}
-
-.row1{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.box-col1{
-    width: 33.33%;
-    margin: auto;
-    padding: 0px;
-}
-
-.box-col h1{
-    color: white;
-}
-
-.box-col form{
-    color: blue;
-}
-
-.box-col p{
-    color: black;
-
-}
-
-.box img{
-    padding-left:80px;
-    padding-top:15px;
-    padding-bottom:30px;
-    width: 250px;
-    height: 450px;
-}
-
-* footer{
-    margin: 0px;
-    padding: 0px;
-    background-color: black;
-    box-sizing: border-box;
-    position: fixed;
-}
-
-.container{
-    width:1600px;
-    height: 1400px;
-}
-
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-ul{
-    list-style: none;
-}
-
-li a{
-    color: white;
-    text-decoration: none;
-}
-
-.footer-col{
-    width: 33.33%;
-    padding: 0px;
-    margin: auto;
-}
-
-.footer-col h3{
-    font-family:Arial, Helvetica, sans-serif;
-    padding: 5px 40px;
-    color: rgb(162, 170, 170);
-}
-
-.footer-col h4{
-    padding: 0px 0px;
-}
-
-footer img{
-    width: 180px;
-    height: 70px;
-    padding: 20px 80px 100px 100px;
-}
-
-.form
+*
 {
-    background-color: white;
+    margin: 0;
+    padding: 0;
+    /* background-color:rgba(7, 2, 2, 0.107);
+     */
+     box-sizing: border-box;
+     color: white;
+}
+
+
+.nav{
+    background-color: black;
+    color: white;
+}
+.nav ul li
+{
+    display: inline;
+    font-size: 2rem;
+    padding:12vw;
+}
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: #121212; */
+    animation: backgroundanimate 5s linear infinite;
+}
+
+@keyframes backgroundanimate{
+0%
+    { 
+        filter:hue-rotate(0deg);
+        transform: rotate(0deg);
+        background-color: #121212;
+    }
+    
+    100%
+    {
+        transform: rotate(0deg);
+        filter:hue-rotate(360deg);
+    background-color: red;
+    }
+
+}
+.bowl
+{
+    position: relative;
+    width:300px;
+    height: 300px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius:50%;
+    border: 8px solid transparent;
+    animation: animate 5s linear infinite;
+    transform-origin:bottom center;
+}
+
+@keyframes animate {
+    0%
+    { 
+        filter:hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25%
+    {
+        transform: rotate(15deg);
+    }
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    75%
+    {
+        transform: rotate(-15deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+        filter:hue-rotate(360deg);
+    }
+
+}
+
+.bowl:before
+{
+    content: '';
+    position: absolute;
+    width: 40%;
+    top:-15px;
+    left:50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border: 15px solid #444;
+    border-radius: 50%;
+    box-shadow: 0 10px #222;
+}
+
+.bowl::after
+{
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+    border-radius: 50%;
+    width: 150px;
+    height: 80px;
+    background-color: rgba(255,255,255,0.05);
+
+}
+
+.liquid
+{
+position: absolute;
+top: 50%;
+left:5px;
+right: 5px;
+bottom: 5px;
+border-bottom-left-radius: 150px;
+border-bottom-right-radius: 150px;
+background: #41c1fb;
+filter:drop-shadow(0 0 80px #41c1fb);
+animation: aliquid 5s linear infinite;
+ transform-origin: top center;
+}
+
+@keyframes aliquid {
+    0%
+    {
+        tranform: rotate(0deg);
+    }
+    25%
+    {
+        tranform: rotate(15deg);
+    }
+    50%
+    {
+        tranform: rotate(0deg);
+    }
+    75%
+    {
+        tranform: rotate(20deg);
+    }
+    100%
+    {
+        tranform: rotate(0deg);
+    }
+}
+
+.liquid::before
+{
+    content:'';
+    position: absolute;
+    top:-10px;
+    width: 100%;
+    height: 20px;
+    background: #1fa4e0;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 80px #41c1fb);
+
+}
+
+.shadow
+{
+ position: absolute;
+ top: calc(50% + 150px);
+ left: 50%;
+ transform: translate(-50%,-50%);
+ width: 300px;
+ height: 30px;
+ background: rgba(0, 0,0, 0.5);
+ border-radius: 50%;
 }
