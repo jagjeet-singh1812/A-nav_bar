@@ -45,7 +45,7 @@ section
     }
 
 }
-.bowl
+.bowlcontainer
 {
     position: relative;
     width:300px;
@@ -83,7 +83,7 @@ section
 
 }
 
-.bowl:before
+.bowlcontainer:before
 {
     content: '';
     position: absolute;
@@ -97,7 +97,7 @@ section
     box-shadow: 0 10px #222;
 }
 
-.bowl::after
+.bowlcontainer::after
 {
     content: '';
     position: absolute;
